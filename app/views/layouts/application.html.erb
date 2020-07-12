@@ -17,6 +17,9 @@
       <div class="login-username">
         <p>ログインユーザー名: <%= current_user.name %></p>
       </div>
+      <div class="profile_edit">
+        <%= link_to 'プロフィール', edit_user_path(current_user) %>
+      </div>
       <div class="newfeed">
         <%= link_to '作成', new_feed_path %>
       </div>

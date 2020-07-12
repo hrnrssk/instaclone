@@ -22,7 +22,7 @@ body{
 }
 
 .login-username{
-    padding: 0px 0px 0px 70px;
+    padding: 0px 0px 0px 120px;
     color: black;
     margin:  0 auto;
     z-index:3
@@ -110,16 +110,6 @@ table td {
     border-radius: 0 5px 0 0;
 }
 
-.table tr:last-child td:first-child{
-    border-top: none;
-    border-radius: 0 0 0 5px;
-}
-
-.table tr:last-child td:last-child {
-    border-bottom: none;
-    border-radius: 0 0 5px 0;
-}
-
 .table :visited {
     color: rgb(0, 30, 235);
 }
@@ -137,9 +127,23 @@ table td {
     text-decoration: none;
 }
 
+.profile_edit {
+    padding: 0px 70px 0px 0px;
+    color: black;
+}
+
+.profile_edit :visited {
+    color: black;
+    }
+
+.profile_edit a {
+    text-decoration: none;
+}
+
+
 .new_feed {
     text-align: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
 
 .field {
@@ -200,7 +204,7 @@ img.feed_img{
 
 .title_login{
     text-align: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
     
 .email{
@@ -239,7 +243,7 @@ img.feed_img{
 
 .logined{
     text-align: center;
-    padding: 20px 0px 0px 0px;
+    padding: 50px 0px 0px 0px;
 }
 
 .email_address{
@@ -263,7 +267,7 @@ img.feed_img{
 
 .title_signup{
     text-align: center;
-    padding: 20px 0px 0px 0px;
+    padding: 50px 0px 0px 0px;
 }
 
 .label_name{
@@ -332,7 +336,7 @@ img.feed_img{
 
 .title_feeds {
     text-align: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
 
 .title_edit {
@@ -347,4 +351,34 @@ img.feed_img{
 
 .edit_to :visited {
     color: rgb(0, 30, 235);
+}
+
+#notice {
+    position: absolute;
+    top: 50px;
+    left: 100px;
+    color: green;
+}
+
+.title_update_profile {
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+
+.profile_field {
+    text-align: center;
+    padding: 20px 0px 0px 0px;
+}
+
+.profile_img {
+
+}
+
+.profile_img {
+    text-align: center;
+    padding: 20px 0px;
+}
+
+img.profileimg{
+    width: 150px;
 }

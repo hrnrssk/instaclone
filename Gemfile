@@ -73,3 +73,6 @@ gem 'mini_magick'
 
 #has_secure_passwordメソッドを使用するため
 gem 'bcrypt', '3.1.11'
+
+#エラ〜メッセージの日本語化
+gem 'rails-i18n'

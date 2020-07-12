@@ -1,9 +1,22 @@
 <% if logged_in? %>
-    <h1 class="logined"><%= @user.name %>さんはログインしました。</h1>
-    <p class="email_address">メールアドレス: <%= @user.email %></p>
-    <div class="submit_index">
-        <%= link_to '投稿一覧へ', feeds_path %>
-    </div>
+    <% if @user.profileimage.url == nil %>
+        <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
+        <p class="email_address">メールアドレス: <%= @user.email %></p>
+        <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
+        <div class="submit_index">
+            <%= link_to '投稿一覧へ', feeds_path %>
+        </div>
+    <% else %>
+        <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
+        <div class="profile_img">
+            <%= image_tag @user.profileimage.url, class: 'profileimg' %>
+        </div>
+        <p class="email_address">メールアドレス: <%= @user.email %></p>
+        <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
+        <div class="submit_index">
+            <%= link_to '投稿一覧へ', feeds_path %>
+        </div>
+    <% end %>
 <% else %>
     <h1 class="logined"><%= @user.name %>さんの登録が完了しました。ログインしてください。</h1>
     <p class="email_address">メールアドレス: <%= @user.email %></p>
