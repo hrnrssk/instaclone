@@ -1,0 +1,49 @@
+<h1 class="title_signup">Sign up</h1>
+<% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> prohibited this <%= @user.name %> from being saved:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+<%= form_with(model: @user, local: true) do |f| %>
+  <div class="label_name">
+    <%= f.label :name %>
+  </div>
+  <div class="text_field_name">
+    <%= f.text_field :name %>
+  </div>
+  <div class="label_email">
+    <%= f.label :email %>
+  </div>
+  <div class="user_email_field">
+    <%= f.email_field :email %>
+  </div>
+  <div class="label_public_relations">
+    <%= f.label :public_relations %>
+  </div>
+  <div class="pr_text_field">
+  <%= f.text_field :pr %>
+  </div>
+  <div class="label_password">
+    <%= f.label :password %>
+  </div>
+  <div class="user_password_field">
+    <%= f.password_field :password %>
+  </div>
+  <div class="label_password_confirmation">
+    <%= f.label :password_confirmation %>
+  </div>
+  <div class="password_field_password_confirmation">
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div class="submit_createacount">
+    <%= f.submit "アカウント作成" %>
+  </div>
+<% end %>
+<div class="to_top">
+  <%= link_to 'トップ画面へ', "/tops" %>
+</div>

@@ -1,0 +1,23 @@
+<h1 class="show">詳細画面</h1>
+  <div class="content">
+    コメント: <%= @feed.content %>
+  </div>
+  <div class="feed_image">
+    <%= image_tag @feed.image.url, class: 'feed_img' %>
+  </div>
+<% if current_user == nil %>
+  <div class="back">
+    <%= link_to 'Back', feeds_path %>
+  </div>
+<% elsif @feed.user_id == current_user.id %>
+  <div class="edit">
+    <%= link_to 'Edit', edit_feed_path(@feed) %>
+  </div>
+  <div class="back">
+    <%= link_to 'Back', feeds_path %>
+  </div>
+<% else %>
+  <div class="back">
+  <%= link_to 'Back', feeds_path %>
+  </div>
+<% end %>

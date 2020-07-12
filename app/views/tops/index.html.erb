@@ -1,0 +1,9 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+  <h1 class="title_feeds">Instagram Clone</h1>
+<%= form_with(model: @feed, local: true) do |form| %>
+  <div class="submit_index">
+    <%= link_to "投稿一覧へ", feeds_path %>
+  </div>
+<% end %>
