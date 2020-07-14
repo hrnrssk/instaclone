@@ -183,7 +183,7 @@ img.feed_img{
     padding: 20px 0px;
 }
 
-.content {
+.content {  
     text-align: center;
     padding: 20px 0px 10px 0px;
 }
@@ -199,7 +199,7 @@ img.feed_img{
 
 .show {
     text-align: center;
-    padding: 20px 0px;
+    padding: 50px 0px;
 }
 
 .title_login{
@@ -356,7 +356,7 @@ img.feed_img{
 #notice {
     position: absolute;
     top: 50px;
-    left: 100px;
+    left: 20px;
     color: green;
 }
 
@@ -381,4 +381,41 @@ img.feed_img{
 
 img.profileimg{
     width: 150px;
+}
+
+.favorite {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.favorite :visited {
+    color: black;
+    }
+
+.favorite a {
+    text-decoration: none;
+}
+
+.favorite_not {
+    text-align: center;
+    padding: 10px 0px;
+}
+
+.favorite_not :visited {
+    color: black;
+    }
+
+.favorite_not a {
+    text-decoration: none;
+}
+
+h1 {
+    text-align: center;
+    padding: 50px 0px 0px 0px;
+}
+
+.favorite_table {
+    position: absolute;
+    top: 70px;
+    text-align: center;
 }

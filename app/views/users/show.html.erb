@@ -5,6 +5,7 @@
         <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
         <div class="submit_index">
             <%= link_to '投稿一覧へ', feeds_path %>
+            <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
         </div>
     <% else %>
         <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
@@ -15,6 +16,7 @@
         <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
         <div class="submit_index">
             <%= link_to '投稿一覧へ', feeds_path %>
+            <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
         </div>
     <% end %>
 <% else %>

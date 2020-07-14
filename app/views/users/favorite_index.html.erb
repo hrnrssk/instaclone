@@ -1,0 +1,15 @@
+<h1>お気に入り一覧</h1>
+<div class = "favorite_table">
+  <table class = "table">
+    <tbody>
+      <% @favorite.each do |favorite| %>
+      <tr>
+        <td><%= favorite.user.name %></td>
+        <td><%= favorite.content %></td>
+        <td><%= image_tag favorite.image.url, class: 'feed_img' %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= link_to '投稿一覧へ', feeds_path %>

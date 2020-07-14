@@ -28,6 +28,9 @@ class UsersController < ApplicationController
       end
     end
   end
+  def favorite_index
+    @favorite = current_user.favorite_feeds
+  end
 
   private
   def user_params

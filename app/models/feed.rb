@@ -3,4 +3,6 @@ class Feed < ApplicationRecord
     belongs_to :user
     validates :content, presence: true
     validates :image, presence: true
+    has_many :favorites, dependent: :destroy
+    has_many :favorite_users, through: :favorites, source: :user
 end

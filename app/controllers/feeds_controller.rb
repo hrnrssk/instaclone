@@ -10,6 +10,9 @@ class FeedsController < ApplicationController
   # GET /feeds/1
   # GET /feeds/1.json
   def show
+    if current_user.present?
+      @favorite = current_user.favorites.find_by(feed_id: @feed.id)
+    end
   end
 
   # GET /feeds/new

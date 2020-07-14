@@ -1,4 +1,17 @@
 <h1 class="show">詳細画面</h1>
+  <% if current_user.present? %>
+    <% unless @feed.user_id == current_user.id %>
+      <% if @favorite.present? %>
+        <div class="favorite_not">
+          <%= link_to 'お気に入りを解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+        </div>
+      <% else %>
+        <div class="favorite">
+          <%= link_to 'お気に入りにする', favorites_path(feed_id: @feed.id), method: :post, class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+    <% end %>
+  <% end %>
   <div class="content">
     コメント: <%= @feed.content %>
   </div>
