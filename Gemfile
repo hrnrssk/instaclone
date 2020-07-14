@@ -76,3 +76,8 @@ gem 'bcrypt', '3.1.11'
 
 #エラ〜メッセージの日本語化
 gem 'rails-i18n'
+
+#ブラウザ上でメール送信内容を確認することができるgem
+group :development do
+  gem 'letter_opener_web'
+end
