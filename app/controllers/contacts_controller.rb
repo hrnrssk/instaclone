@@ -24,16 +24,16 @@ class ContactsController < ApplicationController
   # POST /contacts
   # POST /contacts.json
   def create
-    @contact = Contact.new(contact_params)
+    @feed = current_user.feeds.build(feed_params)
 
     respond_to do |format|
-      if @contact.save
-        ContactMailer.contact_mail(@contact).deliver
-        format.html { redirect_to @contact, notice: 'Contact was successfully created.' }
-        format.json { render :show, status: :created, location: @contact }
+      if @feed.save
+        ContactMailer.contact_mail(@feed).deliver
+        format.html { redirect_to @feed, notice: 'Confirmation email was successfully created.' }
+        format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
-        format.json { render json: @contact.errors, status: :unprocessable_entity }
+        format.json { render json: @feed.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -71,5 +71,9 @@ class ContactsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def contact_params
       params.require(:contact).permit(:name, :email, :content)
+    end
+
+    def feed_params
+      params.require(:feed).permit(:image, :image_cache, :content)
     end
 end
