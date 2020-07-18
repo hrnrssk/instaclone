@@ -29,7 +29,7 @@ class ContactsController < ApplicationController
     respond_to do |format|
       if @feed.save
         ContactMailer.contact_mail(@feed).deliver
-        format.html { redirect_to @feed, notice: 'Confirmation email was successfully created.' }
+        format.html { redirect_to @feed, notice: '確認メールを送りました' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }

@@ -13,7 +13,7 @@
         <td><%= feed.user.name %></td>
         <td><%= image_tag feed.image.url, class: 'feed_img' %></td>
         <td ><%= feed.content %></td>
-        <td><%= link_to '投稿を見る', feed %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '編集する', edit_feed_path(feed) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '削除する', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '投稿を見る', feed %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '編集する', edit_feed_path(feed.id) %>&nbsp;&nbsp;&nbsp;&nbsp;<%= link_to '削除する', feed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% else %>
       <tr>

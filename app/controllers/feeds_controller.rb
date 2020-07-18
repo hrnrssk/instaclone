@@ -36,7 +36,7 @@ class FeedsController < ApplicationController
     respond_to do |format|
       if @feed.save
         ContactMailer.contact_mail(@feed).deliver
-        format.html { redirect_to @feed, notice: 'Feed was successfully created.' }
+        format.html { redirect_to @feed, notice: '投稿されました' }
         format.json { render :show, status: :created, location: @feed }
       else
         format.html { render :new }
@@ -50,7 +50,7 @@ class FeedsController < ApplicationController
   def update
     respond_to do |format|
       if @feed.update(feed_params)
-        format.html { redirect_to @feed, notice: 'Feed was successfully updated.' }
+        format.html { redirect_to @feed, notice: '投稿は更新されました' }
         format.json { render :show, status: :ok, location: @feed }
       else
         format.html { render :edit }
@@ -64,14 +64,17 @@ class FeedsController < ApplicationController
   def destroy
     @feed.destroy
     respond_to do |format|
-      format.html { redirect_to feeds_url, notice: 'Feed was successfully destroyed.' }
+      format.html { redirect_to feeds_url, notice: '投稿は削除されました' }
       format.json { head :no_content }
     end
   end
+
   def confirm
     @feed = current_user.feeds.build(feed_params)
+    @feed.id = params[:id]
     render :new if @feed.invalid?
   end
+
   def ensure_correct_user
     @feed = Feed.find_by(id: params[:id])
     if current_user.name.empty?
@@ -84,6 +87,7 @@ class FeedsController < ApplicationController
       end
     end
   end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_feed
@@ -92,6 +96,6 @@ class FeedsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def feed_params
-      params.require(:feed).permit(:image, :image_cache, :content)
+      params.require(:feed).permit(:id, :image, :image_cache, :content)
     end
 end
