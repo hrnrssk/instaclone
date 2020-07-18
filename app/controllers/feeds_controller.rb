@@ -89,13 +89,13 @@ class FeedsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_feed
-      @feed = Feed.find(params[:id])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_feed
+    @feed = Feed.find(params[:id])
+  end
 
-    # Only allow a list of trusted parameters through.
-    def feed_params
-      params.require(:feed).permit(:id, :image, :image_cache, :content)
-    end
+  # Only allow a list of trusted parameters through.
+  def feed_params
+    params.require(:feed).permit(:id, :image, :image_cache, :content)
+  end
 end

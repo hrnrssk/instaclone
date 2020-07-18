@@ -1,26 +1,26 @@
 <% if logged_in? %>
-    <% if @user.profileimage.url == nil %>
-        <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
-        <p class="email_address">メールアドレス: <%= @user.email %></p>
-        <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
-        <div class="submit_index">
-            <%= link_to '投稿一覧へ', feeds_path %>
-            <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
-        </div>
-    <% else %>
-        <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
-        <div class="profile_img">
-            <%= image_tag @user.profileimage.url, class: 'profileimg' %>
-        </div>
-        <p class="email_address">メールアドレス: <%= @user.email %></p>
-        <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
-        <div class="submit_index">
-            <%= link_to '投稿一覧へ', feeds_path %>
-            <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
-        </div>
-    <% end %>
-<% else %>
-    <h1 class="logined"><%= @user.name %>さんの登録が完了しました。ログインしてください。</h1>
+  <% if @user.profileimage.url == nil %>
+    <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
     <p class="email_address">メールアドレス: <%= @user.email %></p>
     <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
+    <div class="submit_index">
+      <%= link_to '投稿一覧へ', feeds_path %>
+      <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
+    </div>
+  <% else %>
+    <h1 class="logined"><%= @user.name %>さんのプロフィール</h1>
+    <div class="profile_img">
+      <%= image_tag @user.profileimage.url, class: 'profileimg' %>
+    </div>
+    <p class="email_address">メールアドレス: <%= @user.email %></p>
+    <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
+    <div class="submit_index">
+      <%= link_to '投稿一覧へ', feeds_path %>
+      <%= link_to "お気に入り一覧へ", favorite_index_users_path %>
+    </div>
+  <% end %>
+<% else %>
+  <h1 class="logined"><%= @user.name %>さんの登録が完了しました。ログインしてください。</h1>
+  <p class="email_address">メールアドレス: <%= @user.email %></p>
+  <p class="pr_comment"> 自己PR: <%= @user.pr %></p>
 <% end %>
